@@ -1,0 +1,112 @@
+/* Header.css */
+header {
+  background: rgba(51, 51, 51, 0.8); /* Add 20% transparency */
+  color: #fff;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header-logo {
+  height: 50px; /* Adjust the size as needed */
+  cursor: pointer;
+  margin-right: 10px; /* Add some spacing between the logo and the header text */
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* This creates consistent spacing between logo and text */
+}
+
+header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  margin-left: 10px;
+  white-space: nowrap;
+  position: relative;
+  top: 2px; /* Adjust this value to move up or down */
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center; /* Ensure links are vertically centered */
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 0; /* Add padding for better touch targets */
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.burger-menu {
+  display: none; /* Hide by default */
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem; /* Add padding for better touch targets */
+}
+
+/* Media Query for Tablets and Smaller Devices */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 1rem; /* Ensure padding is consistent */
+  }
+
+  .nav-links {
+    position: fixed; /* Use fixed position for full-screen overlay */
+    top: 60px; /* Adjust based on header height */
+    right: 0;
+    bottom: 0;
+    background: rgba(51, 51, 51, 0.95); /* Slightly darker background for contrast */
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start; /* Align links to the top */
+    transform: translateX(100%); /* Hide off-screen by default */
+    transition: transform 0.3s ease-in-out;
+    padding-top: 2rem; /* Add padding at the top */
+  }
+
+  .nav-links.active {
+    transform: translateX(0); /* Slide in when active */
+  }
+
+  .nav-links a {
+    font-size: 1.2rem; /* Increase font size for better readability */
+    padding: 1rem 0; /* Add more padding for touch targets */
+  }
+
+  .burger-menu {
+    display: block; /* Show burger menu on mobile */
+  }
+}
+
+/* Media Query for Very Small Devices (e.g., phones in portrait mode) */
+@media (max-width: 480px) {
+  header h2 {
+    font-size: 1rem; /* Further reduce font size for very small screens */
+  }
+
+  .nav-links a {
+    font-size: 1rem; /* Adjust font size for very small screens */
+  }
+}
